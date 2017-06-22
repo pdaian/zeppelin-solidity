@@ -40,7 +40,7 @@ contract StandardToken is BasicToken, ERC20 {
    * @param _spender The address which will spend the funds.
    * @param _value The amount of tokens to be spent.
    */
-  function approve(address _spender, uint256 _value) {
+  function approve(address _spender, uint256 _value) onlyPayloadSize(2 * 32) {
 
     // To change the approve amount you first have to reduce the addresses`
     //  allowance to zero by calling `approve(_spender, 0)` if it is not
